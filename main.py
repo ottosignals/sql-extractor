@@ -9,7 +9,7 @@ def run():
     BQ_PROJECT_ID = os.environ.get('BQ_PROJECT_ID')
     BQ_DATASET_ID = os.environ.get('BQ_DATASET_ID')
     BQ_TABLE_ID = os.environ.get('BQ_TABLE_ID')
-    BQ_WRITE_MODE = os.environ.get('BQ_TABLE_ID')
+    BQ_WRITE_MODE = os.environ.get('BQ_WRITE_MODE')
 
     DB_USER = os.getenv("DB_USER")
     DB_PASSWORD = os.getenv("DB_PASSWORD")

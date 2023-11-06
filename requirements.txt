@@ -1,0 +1,5 @@
+google-api-core==2.11.0
+google-cloud-bigquery==3.9.0
+mysql==0.0.3
+mysql-connector-python==8.2.0
+mysqlclient==2.2.0

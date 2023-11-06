@@ -45,7 +45,7 @@ def run():
         encoded_str = data_str.encode()
         data_file = io.BytesIO(encoded_str)
 
-        if not BQ_WRITE_MODE:
+        if not BQ_WRITE_MODE or BQ_WRITE_MODE=='':
             write_disposition = "WRITE_TRUNCATE" if first_cycle else "WRITE_APPEND" # always delete the old data
         else:
             write_disposition = BQ_WRITE_MODE

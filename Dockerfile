@@ -1,6 +1,9 @@
 # Use an official Python runtime as a parent image
 FROM python:3.8-slim-buster
 
+RUN apt update
+RUN apt install -y pkg-config
+
 # Set the working directory to /app
 WORKDIR /app
 

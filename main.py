@@ -9,6 +9,7 @@ def run():
     BQ_PROJECT_ID = os.environ.get('BQ_PROJECT_ID')
     BQ_DATASET_ID = os.environ.get('BQ_DATASET_ID')
     BQ_TABLE_ID = os.environ.get('BQ_TABLE_ID')
+    BQ_WRITE_MODE = os.environ.get('BQ_TABLE_ID')
 
     DB_USER = os.getenv("DB_USER")
     DB_PASSWORD = os.getenv("DB_PASSWORD")
@@ -44,7 +45,11 @@ def run():
         encoded_str = data_str.encode()
         data_file = io.BytesIO(encoded_str)
 
-        write_disposition = "WRITE_TRUNCATE" if first_cycle else "WRITE_APPEND" # always delete the old data
+        if not BQ_WRITE_MODE:
+            write_disposition = "WRITE_TRUNCATE" if first_cycle else "WRITE_APPEND" # always delete the old data
+        else:
+            write_disposition = BQ_WRITE_MODE
+
         bq.insert(BQ_PROJECT_ID, BQ_DATASET_ID, BQ_TABLE_ID, data_file, data_format='json_file', schema=schema, write_disposition=write_disposition)
         print(f"Data has been inserted to BigQuery")
         

@@ -25,5 +25,19 @@ mysql_types = {
     "varbinary": "STRING",
     "enum": "STRING",
     "set": "STRING",
-    "json": "STRING"
+    "json": "STRING",
+    "null": "STRING",
+    "tine_blob": "STRING",
+    "medium_blob": "STRING",
+    "long_blob": "STRING",
+    "blob": "STRING",
+    "var_string": "STRING",
+    "string": "STRING",
+    "geometry": "STRING",
+    "newdate": "DATE",
+    "tiny": "NUMERIC",
+    "short": "INT64",
+    "long": "INT64",
+    "longlong": "INT64",
+    "int24": "INT64"
 }

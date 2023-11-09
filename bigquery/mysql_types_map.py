@@ -35,6 +35,7 @@ mysql_types = {
     "string": "STRING",
     "geometry": "STRING",
     "newdate": "DATE",
+    "newdecimal": "NUMERIC",
     "tiny": "NUMERIC",
     "short": "INT64",
     "long": "INT64",
